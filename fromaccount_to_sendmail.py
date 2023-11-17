@@ -11,8 +11,8 @@ email_address = 'rebillar@insa-toulouse.fr'
 
 smtp_address = 'smtp.insa-toulouse.fr'
 smtp_port = 465
-fichier_input = 'account.csv' # (à générer avec create_account.py)
-passwd = open(".passwd", "r")
+fichier_input = 'output/account.csv' # (à générer avec create_account.py)
+passwd = open("config/.passwd", "r")
 email_password = passwd.readlines()[0]
 passwd.close()
 
@@ -48,6 +48,6 @@ with open(fichier_input, newline='', encoding='utf-8') as fichier_csv:
     print("mail : " + mail)
     print("user : " + user)
     print("mdp : " + mdp)
-    sendmail(mail, content("email.html", user, mdp))
+    sendmail(mail, content("config/email.html", user, mdp))
     print("done.")
     print("----------------------------------")

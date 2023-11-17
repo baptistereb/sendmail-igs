@@ -1,7 +1,7 @@
 import csv
 
-fichier_csv_entree = "account.csv"
-fichier_sortie = "radius_account"
+fichier_csv_entree = "output/account.csv"
+fichier_sortie = "output/radius_account"
 
 with open(fichier_csv_entree, 'r') as fichier_csv:
     lecteur_csv = csv.reader(fichier_csv)
