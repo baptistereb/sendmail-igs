@@ -5,7 +5,7 @@ import random
 import string
 from unidecode import unidecode
 
-nom_fichier = 'test.csv'
+nom_fichier = 'igs2023.csv'
 
 User = []
 with open(nom_fichier, newline='', encoding='utf-8') as fichier_csv:
