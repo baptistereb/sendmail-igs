@@ -41,7 +41,7 @@ def content(nom_fichier, user, passwd):
 #print(sendmail("dacostab@insa-toulouse.fr", content("email.html", "un identifiant", "un mdp")))
 
 
-fichier_input = 'out_igs2023.csv' # (à générer avec create_account.py)
+fichier_input = 'account.csv' # (à générer avec create_account.py)
 
 with open(fichier_input, newline='', encoding='utf-8') as fichier_csv:
   lecteur_csv = csv.reader(fichier_csv)

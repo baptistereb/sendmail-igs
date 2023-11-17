@@ -1,10 +1,10 @@
 import csv
 
 # Nom du fichier CSV d'entrée
-fichier_csv_entree = "out_igs2023.csv"
+fichier_csv_entree = "account.csv"
 
 # Nom du fichier de sortie
-fichier_sortie = "radius_"+fichier_csv_entree
+fichier_sortie = "radius_account"
 
 # Ouvrir le fichier CSV en lecture
 with open(fichier_csv_entree, 'r') as fichier_csv:

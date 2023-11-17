@@ -17,7 +17,7 @@ with open(nom_fichier, newline='', encoding='utf-8') as fichier_csv:
         ligne.append(mot_de_passe)
         User.append(ligne)
 
-nouveau_nom_fichier = "out_"+nom_fichier
+nouveau_nom_fichier = "account.csv"
 with open(nouveau_nom_fichier, 'w', newline='', encoding='utf-8') as fichier_csv:
     ecrivain_csv = csv.writer(fichier_csv)
     ecrivain_csv.writerows(User)
