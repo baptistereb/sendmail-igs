@@ -6,10 +6,10 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 # on rentre les informations de l'adresse email emettrice (qui va également recevoir les mails en BCC pour vérifier qu'ils arrivent bien)
-email_address = 'rebillar@insa-toulouse.fr'
+email_address = 'igs@amicale-insat.fr'
 
 
-smtp_address = 'smtp.insa-toulouse.fr'
+smtp_address = 'amicale-insat.fr'
 smtp_port = 465
 fichier_input = 'output/account.csv' # (à générer avec create_account.py)
 passwd = open("config/.passwd", "r")
