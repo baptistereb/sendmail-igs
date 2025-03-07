@@ -5,9 +5,11 @@ from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-# on rentre les informations de l'adresse email emettrice (qui va également recevoir les mails en BCC pour vérifier qu'ils arrivent bien)
+# on rentre les informations de l'adresse email emettrice et du mail en BCC pour vérifier qu'ils arrivent bien
 email_address = 'igs@amicale-insat.fr'
 
+display_sender="INSA GAME SHOW"
+bcc_address="rebillar@insa-toulouse.fr" # va recevoir en copie caché les mails pour vérifier leur émission
 
 smtp_address = 'amicale-insat.fr'
 smtp_port = 465
@@ -18,11 +20,11 @@ passwd.close()
 
 def sendmail(receiver, content):
   message = MIMEMultipart()
-  message["From"] = email_address
+  message["From"] = display_sender
   message["To"] = receiver
   message["Subject"] = "[IMPORTANT] INSA GAME SHOW - accès et organisation"
   message.attach(MIMEText(content, "html"))
-  message["Bcc"] = email_address
+  message["Bcc"] = bcc_address
 
   rcpt = message["Bcc"].split(",") + [receiver]
 
