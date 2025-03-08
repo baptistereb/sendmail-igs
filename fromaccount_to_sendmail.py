@@ -1,4 +1,4 @@
-import smtplib, ssl, csv
+import smtplib, ssl, csv, uuid
 
 from email import encoders
 from email.mime.base import MIMEBase
@@ -6,12 +6,12 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 # on rentre les informations de l'adresse email emettrice et du mail en BCC pour vérifier qu'ils arrivent bien
-email_address = 'club.info@amicale-insat.fr'
+email_address = 'rebillar@insa-toulouse.fr'
 
 display_sender="INSA GAME SHOW"
 bcc_address="rebillar@insa-toulouse.fr" # va recevoir en copie caché les mails pour vérifier leur émission
 
-smtp_address = 'amicale-insat.fr'
+smtp_address = 'smtp.insa-toulouse.fr'
 smtp_port = 465
 fichier_input = 'output/account.csv' # (à générer avec create_account.py)
 passwd = open("config/.passwd", "r")
@@ -25,6 +25,8 @@ def sendmail(receiver, content):
   message["Subject"] = "[IMPORTANT] INSA GAME SHOW - accès et organisation"
   message.attach(MIMEText(content, "html"))
   message["Bcc"] = bcc_address
+  message_id = f"<{uuid.uuid4()}@{smtp_address}>"
+  message["Message-ID"] = message_id
 
   rcpt = message["Bcc"].split(",") + [receiver]
 
