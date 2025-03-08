@@ -16,7 +16,7 @@ with open(nom_fichier, newline='', encoding='utf-8') as fichier_csv:
         nom = re.sub(r'[^a-z]', '', unidecode(ligne[0]).lower())
         prenom_nom_propre = f"{prenom}.{nom}"
         ligne.append(prenom_nom_propre)
-        rchoice = random.choices(string.ascii_letters + string.digits, k=8)
+        rchoice = random.choices("abcdefghjkmnopqrstuvwxyzABCDEFGHJKMNOPQRSTUVWXYZ123456789", k=8)
         mot_de_passe = ''.join(rchoice)
         ligne.append(mot_de_passe)
         User.append(ligne)
